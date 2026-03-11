@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weekly Food Selection Chart</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f2f2f2;
+text-align:center;
+}
+
+h1{
+font-weight:bold;
+margin-top:30px;
+}
+
+.container{
+width:80%;
+margin:auto;
+margin-top:30px;
+}
+
+.week{
+display:grid;
+grid-template-columns: repeat(4,1fr);
+gap:20px;
+}
+
+.day{
+background:white;
+border:2px solid black;
+padding:15px;
+border-radius:10px;
+}
+
+.food{
+margin:10px 0;
+font-weight:bold;
+}
+
+button{
+padding:6px 15px;
+background:green;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:darkgreen;
+}
+
+#orderBox{
+margin-top:40px;
+padding:20px;
+border:2px solid black;
+background:white;
+width:40%;
+margin-left:auto;
+margin-right:auto;
+display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1><b>Weekly Food Selection Chart</b></h1>
+
+<div class="container">
+
+<div class="week">
+
+<div class="day">
+<h3>Monday</h3>
+<div class="food">Biryani</div>
+<button onclick="orderFood('Monday','Biryani')">Select</button>
+</div>
+
+<div class="day">
+<h3>Tuesday</h3>
+<div class="food">Fried Rice</div>
+<button onclick="orderFood('Tuesday','Fried Rice')">Select</button>
+</div>
+
+<div class="day">
+<h3>Wednesday</h3>
+<div class="food">Noodles</div>
+<button onclick="orderFood('Wednesday','Noodles')">Select</button>
+</div>
+
+<div class="day">
+<h3>Thursday</h3>
+<div class="food">Pizza</div>
+<button onclick="orderFood('Thursday','Pizza')">Select</button>
+</div>
+
+<div class="day">
+<h3>Friday</h3>
+<div class="food">Burger</div>
+<button onclick="orderFood('Friday','Burger')">Select</button>
+</div>
+
+<div class="day">
+<h3>Saturday</h3>
+<div class="food">Chicken Curry</div>
+<button onclick="orderFood('Saturday','Chicken Curry')">Select</button>
+</div>
+
+<div class="day">
+<h3>Sunday</h3>
+<div class="food">Paneer Curry</div>
+<button onclick="orderFood('Sunday','Paneer Curry')">Select</button>
+</div>
+
+</div>
+
+</div>
+
+<div id="orderBox">
+<h3>Order</h3>
+<p id="orderText"></p>
+</div>
+
+<script>
+
+function orderFood(day,food)
+{
+document.getElementById("orderBox").style.display="block";
+document.getElementById("orderText").innerHTML =
+"You selected <b>"+food+"</b> for <b>"+day+"</b>";
+}
+
+</script>
+
+</body>
+</html>
